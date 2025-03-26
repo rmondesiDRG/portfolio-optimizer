@@ -10,6 +10,38 @@ st.set_page_config(layout="wide", page_title="Portfolio Optimizer", page_icon="�
 st.title("📊 Portfolio Optimizer with Efficient Frontier")
 
 st.sidebar.header("User Input Parameters")
+
+with st.expander("💡 Suggested Investment Themes & Tickers (Click to Expand)"):
+    st.markdown("""
+### 🧠 Artificial Intelligence & Cloud Infrastructure
+| Ticker | Company     | Theme                   | Why It Matters |
+|--------|-------------|-------------------------|----------------|
+| **NVDA** | Nvidia      | AI Chips               | Dominant in GPUs powering AI and data centers. |
+| **MSFT** | Microsoft   | Cloud + AI Productivity| Azure + AI Copilots; sticky SaaS revenue. |
+| **AMZN** | Amazon      | Cloud & E-Commerce     | AWS growth rebounding; strong logistics moat. |
+| **GOOGL**| Alphabet    | Search/Cloud/AI        | Gemini AI, YouTube, and profitable Cloud. |
+| **SNOW** | Snowflake   | AI Data Infrastructure | Leading platform for AI-driven analytics. |
+
+### 🧬 Healthcare, Biotech & Genomics
+| Ticker | Company      | Theme                 | Why It Matters |
+|--------|--------------|-----------------------|----------------|
+| **NVO**  | Novo Nordisk | Obesity/Diabetes      | GLP-1 drug leader; $70B+ TAM by 2030. |
+| **LLY**  | Eli Lilly    | Obesity/CNS Disorders | Zepbound, Alzheimer's breakthroughs. |
+| **VRTX** | Vertex Pharma| Gene Therapy/CRISPR   | Profitable CF base + CRISPR pipeline. |
+| **CRSP** | CRISPR Tx    | Gene Editing          | First CRISPR therapy approved. |
+| **ILMN** | Illumina     | Genomics              | Dominates sequencing for precision medicine. |
+
+### 🏗️ Digital Infrastructure & Cybersecurity
+| Ticker | Company     | Theme                 | Why It Matters |
+|--------|-------------|-----------------------|----------------|
+| **ASML** | ASML Holding | EUV Chip Equipment   | Monopoly in AI chip manufacturing tools. |
+| **TSM**  | TSMC         | AI Chip Foundry       | Supplies Nvidia & Apple; 3nm/2nm lead. |
+| **AAPL** | Apple        | Devices/AR/Health     | Vision Pro + ecosystem strength. |
+| **TSLA** | Tesla        | EVs & Energy Storage  | Megapack, FSD optionality, EV scale. |
+| **CRWD** | CrowdStrike  | Cybersecurity SaaS    | AI-native, high-retention protection. |
+""")
+
+
 stocks = st.sidebar.text_input("Enter tickers (comma separated):", "AAPL,MSFT,GOOGL,NVDA,XPEV,ETN").upper().split(',')
 risk_free_rate = st.sidebar.slider("Risk-Free Rate (%)", 0.0, 10.0, 3.0) / 100
 constraint_set = (0.0, 1.0)
